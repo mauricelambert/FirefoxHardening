@@ -6,10 +6,16 @@ A CIS based Hardening for Mozilla Firefox browser.
 
 ## Requirements
 
+ - Firefox
+ - Root/Administrator permissions
+
+### Linux
+
+ - Perl
+
 ### Windows
 
  - Powershell
- - Firefox
 
 ## Usages
 
@@ -17,6 +23,12 @@ A CIS based Hardening for Mozilla Firefox browser.
 
 ```bash
 powershell .\FirefoxHardening.ps1
+```
+
+### Linux
+
+```bash
+sudo perl FirefoxHardening.pl
 ```
 
 ## Links
