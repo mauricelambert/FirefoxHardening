@@ -46,6 +46,8 @@ This is free software, and you are welcome to redistribute it
 under certain conditions.
 EOF
 
+print $COPYRIGHT;
+
 my %configurations = (
    # Custom
 	"dom.event.clipboardevents.enabled" => "false",
