@@ -1,3 +1,30 @@
+###################
+#    This file implements a CIS based Hardening for Mozilla Firefox browser.
+#    Copyright (C) 2022  Maurice Lambert
+
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+###################
+
+$copyright=@'
+FirefoxHardening  Copyright (C) 2022  Maurice Lambert
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under certain conditions.
+'@
+
+echo $copyright
+
 $configurations = @{
 	# Custom
 	"dom.event.clipboardevents.enabled"="false"
@@ -28,6 +55,11 @@ $configurations = @{
 	"webgl.disabled"="true"
 	"browser.urlbar.placeholderName"='"DuckDuckGo"'
 	"browser.urlbar.placeholderName.private"='"DuckDuckGo"'
+        "devtools.theme"='"dark"'
+	"widget.content.allow-gtk-dark-theme"="true"
+	"widget.gtk.alt-theme.dark"="true"
+	"browser.theme.toolbar-theme"="2"
+	"browser.in-content.dark-mode"="true"
 	
 	# CIS
 	"app.update.enabled"="true"
@@ -129,7 +161,7 @@ if ($appdata_files.GetType().Name -match "String") {
 foreach ($directory in $directories) {
 	$file=$directory + '\local-settings.js'
 	Set-Content -Path $file -Value $('pref("general.config.obscure_value", 0);' + "`n" + 'pref("general.config.filename", "mozilla.cfg");')
-	$file=$directory + '\mozilla.cfg'
+	$file=$directory + '\..\..\mozilla.cfg'
 	HardenFile -file $file -pref_type "lockPref"
 }
 
