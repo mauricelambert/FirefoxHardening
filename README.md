@@ -9,9 +9,9 @@ A CIS based Hardening for Mozilla Firefox browser.
  - Easy to use (2 solutions)
      - Run script (PowerShell for Windows, Perl for Linux)
      - Place the reference files, containing the configurations, in the firefox directories (these files are found in the github version)
- - A keepass configruation (the web content can't deactivate copy/paste events)
+ - A keepass configuration (the web content can't deactivate copy/paste events)
  - Privacy configurations (tracking protection, URL bar "smart" options...)
- - Optimization (cache in RAM instead of disk)
+ - Optimization (cache in memory instead of disk)
  - Simplify the use of tabs (don't close Firefox with the last tab)
  - Dark theme for Firefox interface (no impact on the Web content)
 
